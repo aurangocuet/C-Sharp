@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Learning.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +14,9 @@ namespace Learning.Controllers
         //    //return View();
         //}
 
-        public string Index()
+        public string Index(string name)
         {
-            return "Bismillah";
+            return name;
 
         }
 
@@ -23,6 +24,25 @@ namespace Learning.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+            User user = new User()
+            {
+                id = 3,
+                name = "sabbir"
+            };
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult About(User user)
+        {
+            user.id = 10;
+            user.name = "sab";
+            return View(user);
+        }
+
+
+        public ActionResult CustomHelper()
+        {
             return View();
         }
 
