@@ -1,7 +1,104 @@
-﻿@{
+﻿@using Learning.Models
+
+@*if use model name use*@
+@model Learning.Models.User
+
+@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+
+@using (Html.BeginForm("myForm"))
+{
+
+    @Html.TextBoxFor(x => x.id)
+    <br />
+    @Html.TextBoxFor(x => x.name)
+
+    <input type="submit" value="press me" />
+}
+
+
+<br />
+<br />
+
+@Html.ActionLink("Click Me", "Index", new { name = "Sabbir" })
+
+@Html.TextBox("hello")
+
+
+
+@helper MyHelper(string[] str)
+{
+    foreach (var i in str)
+    {
+        <div><h2>list = @i</h2></div>
+    }
+}
+
+@MyHelper(new string[] { "sab", "jerin", "anayza" })
+
+
+@DateTime.Now @*single line razor*@
+
+@*multiline razor*@
+@{
+    var a = 10;
+    var b = 15;
+    var c = 10 + 15;
+}
+<br />
+<label>@c</label>
+
+<br />
+
+@{
+    a = 10;
+    if (a == 10)
+    {
+        <div><h5>hey i am 10</h5></div>
+        <br />
+    }
+    else
+    {
+        <div><h5>hey i am nothing</h5></div>
+
+    }
+}
+
+<br />
+
+@{
+    for (int i = 1; i <= 10; i++)
+    {
+        <div><h4>in @i  index</h4></div>
+    }
+}
+
+<br />
+
+@{
+    var list = new List<int>() { 1, 2, 3, 4, 5 };
+    <text>var list = new List<int>
+            () { 1, 2, 3, 4, 5 };</text>
+    foreach (var i in list)
+    {
+        <div><h5>My Value = @i</h5></div>
+    }
+}
+
+<br />
+
+@{
+    User z = new User() { id = 2, name = "Sabbir" };
+}
+
+@z.id
+
+
+
+
