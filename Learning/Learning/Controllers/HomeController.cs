@@ -45,6 +45,13 @@ namespace Learning.Controllers
         {
             return View();
         }
+        
+        public ActionResult ViewBagExample()
+        {
+            ViewBag.MyName = "Sabbir";
+            ViewData["Name"] = "Aurango Sabbir";
+            return View();
+        }
 
         public ActionResult Contact()
         {
