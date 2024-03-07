@@ -14,6 +14,19 @@ namespace Learning
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "all-student",
+                url: "all-student",
+                defaults: new { controller = "Student", action = "GetAllStudents" }
+            );
+
+            routes.MapRoute(
+                name: "get-student",
+                url: "getStudent/{id}",
+                defaults: new { controller = "Student", action = "GetAllStudents", id = UrlParameter.Optional },
+                constraints: new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
