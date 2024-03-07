@@ -7,8 +7,11 @@ using System.Web.Mvc;
 
 namespace Learning.Controllers
 {
+    [RoutePrefix("students")]
     public class StudentController : Controller
     {
+        //[Route("students")]
+        [Route("")]
         // GET: Student
         public ActionResult GetAllStudents()
         {
@@ -16,6 +19,8 @@ namespace Learning.Controllers
             return View(students);
         }
 
+        //[Route("students/{id}")]
+        [Route("{id}")]
         public ActionResult GetStudent(int id)
         {
             Student student = GetStudents().SingleOrDefault(x => x.Id == id);
@@ -25,6 +30,12 @@ namespace Learning.Controllers
         public ActionResult GetStudentAddress(int id)
         {
             return View();
+        }
+
+        [Route("~/about-us/{id}")]
+        public string aboutus(string id)
+        {
+            return id;
         }
 
         private List<Student> GetStudents()
