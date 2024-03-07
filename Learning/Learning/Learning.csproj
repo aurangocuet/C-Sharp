@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DataPassController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="CustomHTMLHelper.cs" />
@@ -171,6 +172,8 @@
     <Content Include="Views\Home\ViewBagExample.cshtml" />
     <Content Include="Views\Student\GetAllStudents.cshtml" />
     <Content Include="Views\Student\GetStudent.cshtml" />
+    <Content Include="Views\DataPass\FormDataUsingParameter.cshtml" />
+    <Content Include="Views\DataPass\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
